@@ -11,7 +11,7 @@
 
 
 
-<title>R Notebook</title>
+<title>RESULTATS</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1511,7 +1511,7 @@ window.initializeCodeFolding = function(show) {
     $(this).detach().appendTo(div);
 
     // add a show code button right above
-    var showCodeText = $('<span>' + (showThis ? 'Hide' : 'Show') + '</span>');
+    var showCodeText = $('<span>' + (showThis ? 'Hide' : 'Code') + '</span>');
     var showCodeButton = $('<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm code-folding-btn pull-right float-right"></button>');
     showCodeButton.append(showCodeText);
     showCodeButton
@@ -1537,7 +1537,7 @@ window.initializeCodeFolding = function(show) {
     //   * Change text
     //   * add a class for intermediate states styling
     div.on('hide.bs.collapse', function () {
-      showCodeText.text('Show');
+      showCodeText.text('Code');
       showCodeButton.addClass('btn-collapsing');
     });
     div.on('hidden.bs.collapse', function () {
@@ -1746,30 +1746,187 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">R Notebook</h1>
+<h1 class="title toc-ignore">RESULTATS</h1>
 
 </div>
 
 
-<p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a>
-Notebook. When you execute code within the notebook, the results appear
-beneath the code.</p>
-<p>Try executing this chunk by clicking the <em>Run</em> button within
-the chunk or by placing your cursor inside it and pressing
-<em>Ctrl+Shift+Enter</em>.</p>
-<pre class="r"><code>plot(cars)</code></pre>
-<p><embed src="Resultats_files/figure-latex/unnamed-chunk-1-1.pdf"></embed><!-- --></p>
-<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the
-toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
-<p>When you save the notebook, an HTML file containing the code and
-output will be saved alongside it (click the <em>Preview</em> button or
-press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
-<p>The preview shows you a rendered HTML copy of the contents of the
-editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not
-run any R code chunks. Instead, the output of the chunk when it was last
-run in the editor is displayed.</p>
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-text-begin -->
+<div id="repartition-selon-les-classes-dâges" class="section level2">
+<h2>Repartition selon les classes d’âges</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="repartition-selon-le-sexe" class="section level2">
+<h2>Repartition selon le sexe</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgICAgICBcbiBTRVhFICAgICAgICAgIG4gICBQZXJjZW50XG4gKE5vbiBwcsOpY2lzw6kpICAgOCAgIDQuNDQgXG4gRiAgICAgICAgICAgICAgMjAgIDExLjExIFxuIE0gICAgICAgICAgICAgMTUyICA4NC40NCBcbiBBbGwgICAgICAgICAgIDE4MCAxMDAuMDAgXG4ifQ== -->
+<pre><code>                          
+ SEXE          n   Percent
+ (Non précisé)   8   4.44 
+ F              20  11.11 
+ M             152  84.44 
+ All           180 100.00 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="repartition-selon-la-profession" class="section level2">
+<h2>Repartition selon la profession</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gUFJPRkVTU0lPTiAgICAgICAgbiAgIFBlcmNlbnRcbiAoQXV0cmVzKSAgICAgICAgICAgOTggIDU0LjQ0NFxuIChOb24gcHLDqWNpc8OpKSAgICAgIDMwICAxNi42NjdcbiBBZ2VudCBkZSBzw6ljdXJpdMOpICAgMSAgIDAuNTU2XG4gQ29tbWVyw6dhbnQgICAgICAgICAgNyAgIDMuODg5XG4gQ29uZHVjdGV1ciAgICAgICAgICAxICAgMC41NTZcbiBDdWx0aXZhdGV1ciAgICAgICAgMTcgICA5LjQ0NFxuIEVsZWN0cmljaWVuICAgICAgICAgMSAgIDAuNTU2XG4gRm9uY3Rpb25uYWlyZSAgICAgIDE4ICAxMC4wMDBcbiBJbmZvcm1hdGljaWVuICAgICAgIDEgICAwLjU1NlxuIE3DqW5hZ8OocmUgICAgICAgICAgICAzICAgMS42NjdcbiBQbG9tYmllciAgICAgICAgICAgIDEgICAwLjU1NlxuIFBvbGljaWVyICAgICAgICAgICAgMSAgIDAuNTU2XG4gU291ZGV1ciAgICAgICAgICAgICAxICAgMC41NTZcbiBBbGwgICAgICAgICAgICAgICAxODAgMTAwLjAwMFxuIn0= -->
+<pre><code>                              
+ PROFESSION        n   Percent
+ (Autres)           98  54.444
+ (Non précisé)      30  16.667
+ Agent de sécurité   1   0.556
+ Commerçant          7   3.889
+ Conducteur          1   0.556
+ Cultivateur        17   9.444
+ Electricien         1   0.556
+ Fonctionnaire      18  10.000
+ Informaticien       1   0.556
+ Ménagère            3   1.667
+ Plombier            1   0.556
+ Policier            1   0.556
+ Soudeur             1   0.556
+ All               180 100.000</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="repartition-selon-les-motifs-de-consultation" class="section level2">
+<h2>Repartition selon les motifs de consultation</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gRVJFQ1RJT04gQ09OVElOVUUgbiAgIFBlcmNlbnRcbiBGQUxTRSAgICAgICAgICAgICAxNzIgIDk1LjU2IFxuIFRSVUUgICAgICAgICAgICAgICAgOCAgIDQuNDQgXG4gQWxsICAgICAgICAgICAgICAgMTgwIDEwMC4wMCBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIElNUE9TU0lCSUxJVMOJIFRPVEFMRSBEJ1VSSU5FUiBuICAgUGVyY2VudFxuIEZBTFNFICAgICAgICAgICAgICAgICAgICAgICAgIDExMiAgNjIuMiAgXG4gVFJVRSAgICAgICAgICAgICAgICAgICAgICAgICAgIDY4ICAzNy44ICBcbiBBbGwgICAgICAgICAgICAgICAgICAgICAgICAgICAxODAgMTAwLjAgIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIFVSSU5FUyBST1VHRVMgT1UgRk9OQ0VFUyBuICAgUGVyY2VudFxuIEZBTFNFICAgICAgICAgICAgICAgICAgICAgOTMgIDUxLjcgIFxuIFRSVUUgICAgICAgICAgICAgICAgICAgICAgODcgIDQ4LjMgIFxuIEFsbCAgICAgICAgICAgICAgICAgICAgICAxODAgMTAwLjAgIFxuICAgICAgICAgICAgICAgICAgIFxuIEFOVVJJRSBuICAgUGVyY2VudFxuIEZBTFNFICAxNzkgIDk5LjQ0NFxuIFRSVUUgICAgIDEgICAwLjU1NlxuIEFsbCAgICAxODAgMTAwLjAwMFxuICAgICAgICAgICAgICAgICAgXG4gICAgICAgbiAgIFBlcmNlbnRcbiBGQUxTRSAxODAgMTAwICAgIFxuIEFsbCAgIDE4MCAxMDAgICAgXG4gICAgICAgICAgICAgICAgICBcbiAgICAgICBuICAgUGVyY2VudFxuIEZBTFNFIDE4MCAxMDAgICAgXG4gQWxsICAgMTgwIDEwMCAgICBcbiAgICAgICAgICAgICAgICAgIFxuICAgICAgIG4gICBQZXJjZW50XG4gRkFMU0UgMTgwIDEwMCAgICBcbiBBbGwgICAxODAgMTAwICAgIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiBET1VMRVVSUyBQRUxWSS1QRVJJTkVBTEVTIG4gICBQZXJjZW50XG4gRkFMU0UgICAgICAgICAgICAgICAgICAgICAxNzkgIDk5LjQ0NFxuIFRSVUUgICAgICAgICAgICAgICAgICAgICAgICAxICAgMC41NTZcbiBBbGwgICAgICAgICAgICAgICAgICAgICAgIDE4MCAxMDAuMDAwXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiBFUkVDVElPTiBJTkNVUlZFRSBuICAgUGVyY2VudFxuIEZBTFNFICAgICAgICAgICAgIDE3OSAgOTkuNDQ0XG4gVFJVRSAgICAgICAgICAgICAgICAxICAgMC41NTZcbiBBbGwgICAgICAgICAgICAgICAxODAgMTAwLjAwMFxuICAgICAgICAgICAgICAgICAgICAgICAgICBcbiBGSUVWUkUgT1UgQUVHIG4gICBQZXJjZW50XG4gRkFMU0UgICAgICAgICAxNzEgIDk1ICAgIFxuIFRSVUUgICAgICAgICAgICA5ICAgNSAgICBcbiBBbGwgICAgICAgICAgIDE4MCAxMDAgICAgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiBET1VMRVVSUyBMT01CTy1BQkRPTUlOQUxFUyBuICAgUGVyY2VudFxuIEZBTFNFICAgICAgICAgICAgICAgICAgICAgIDE3NSAgOTcuMjIgXG4gVFJVRSAgICAgICAgICAgICAgICAgICAgICAgICA1ICAgMi43OCBcbiBBbGwgICAgICAgICAgICAgICAgICAgICAgICAxODAgMTAwLjAwIFxuICAgICAgICAgICAgICAgICAgXG4gICAgICAgbiAgIFBlcmNlbnRcbiBGQUxTRSAxODAgMTAwICAgIFxuIEFsbCAgIDE4MCAxMDAgICAgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIERPVUxFVVJTIFRFU1RJQ1VMQUlSRVMgbiAgIFBlcmNlbnRcbiBGQUxTRSAgICAgICAgICAgICAgICAgIDE3OSAgOTkuNDQ0XG4gVFJVRSAgICAgICAgICAgICAgICAgICAgIDEgICAwLjU1NlxuIEFsbCAgICAgICAgICAgICAgICAgICAgMTgwIDEwMC4wMDBcbiAgICAgICAgICAgICAgICAgIFxuIElSTyAgIG4gICBQZXJjZW50XG4gRkFMU0UgMTc5ICA5OS40NDRcbiBUUlVFICAgIDEgICAwLjU1NlxuIEFsbCAgIDE4MCAxMDAuMDAwXG4gICAgICAgICAgICAgICAgICAgICAgICAgICBcbiBNQVNTRSBMT01CQUlSRSBuICAgUGVyY2VudFxuIEZBTFNFICAgICAgICAgIDE3OSAgOTkuNDQ0XG4gVFJVRSAgICAgICAgICAgICAxICAgMC41NTZcbiBBbGwgICAgICAgICAgICAxODAgMTAwLjAwMFxuICAgICAgICAgICAgICAgICAgXG4gICAgICAgbiAgIFBlcmNlbnRcbiBGQUxTRSAxODAgMTAwICAgIFxuIEFsbCAgIDE4MCAxMDAgICAgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiBUVU1FRkFDVElPTiBTQ1JPVEFMRSBuICAgUGVyY2VudFxuIEZBTFNFICAgICAgICAgICAgICAgIDE3NSAgOTcuMjIgXG4gVFJVRSAgICAgICAgICAgICAgICAgICA1ICAgMi43OCBcbiBBbGwgICAgICAgICAgICAgICAgICAxODAgMTAwLjAwIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gUExBSUVTIERFUyBPR0UgbiAgIFBlcmNlbnRcbiBGQUxTRSAgICAgICAgICAxNzkgIDk5LjQ0NFxuIFRSVUUgICAgICAgICAgICAgMSAgIDAuNTU2XG4gQWxsICAgICAgICAgICAgMTgwIDEwMC4wMDBcbiAgICAgICAgICAgICAgICAgIFxuICAgICAgIG4gICBQZXJjZW50XG4gRkFMU0UgMTgwIDEwMCAgICBcbiBBbGwgICAxODAgMTAwICAgIFxuICAgICAgICAgICAgICAgICAgICBcbiBEWVNVUklFIG4gICBQZXJjZW50XG4gRkFMU0UgICAxNzkgIDk5LjQ0NFxuIFRSVUUgICAgICAxICAgMC41NTZcbiBBbGwgICAgIDE4MCAxMDAuMDAwXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIFBMQUlFIFBFTkVUUkFOVEUgTE9NQkFJUkUgbiAgIFBlcmNlbnRcbiBGQUxTRSAgICAgICAgICAgICAgICAgICAgIDE3OSAgOTkuNDQ0XG4gVFJVRSAgICAgICAgICAgICAgICAgICAgICAgIDEgICAwLjU1NlxuIEFsbCAgICAgICAgICAgICAgICAgICAgICAgMTgwIDEwMC4wMDBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gU1VQUFVSQVRJT04gUE9TVC1BUFBFTkRJQ1VMQUlSRSBuICAgUGVyY2VudFxuIEZBTFNFICAgICAgICAgICAgICAgICAgICAgICAgICAgMTc5ICA5OS40NDRcbiBUUlVFICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMSAgIDAuNTU2XG4gQWxsICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxODAgMTAwLjAwMFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gRVJFQ1RJT04gRE9VTE9VUkVVU0UgbiAgIFBlcmNlbnRcbiBGQUxTRSAgICAgICAgICAgICAgICAxNzkgIDk5LjQ0NFxuIFRSVUUgICAgICAgICAgICAgICAgICAgMSAgIDAuNTU2XG4gQWxsICAgICAgICAgICAgICAgICAgMTgwIDEwMC4wMDBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIEFVVFJFUyBNT1RJRlMgREUgQ09OU1VMVEFUSU9OIG4gICBQZXJjZW50XG4gRkFMU0UgICAgICAgICAgICAgICAgICAgICAgICAgMTc2ICA5Ny43OCBcbiBUUlVFICAgICAgICAgICAgICAgICAgICAgICAgICAgIDQgICAyLjIyIFxuIEFsbCAgICAgICAgICAgICAgICAgICAgICAgICAgIDE4MCAxMDAuMDAgXG4ifQ== -->
+<pre><code>                              
+ ERECTION CONTINUE n   Percent
+ FALSE             172  95.56 
+ TRUE                8   4.44 
+ All               180 100.00 
+                                          
+ IMPOSSIBILITÉ TOTALE D&#39;URINER n   Percent
+ FALSE                         112  62.2  
+ TRUE                           68  37.8  
+ All                           180 100.0  
+                                     
+ URINES ROUGES OU FONCEES n   Percent
+ FALSE                     93  51.7  
+ TRUE                      87  48.3  
+ All                      180 100.0  
+                   
+ ANURIE n   Percent
+ FALSE  179  99.444
+ TRUE     1   0.556
+ All    180 100.000
+                  
+       n   Percent
+ FALSE 180 100    
+ All   180 100    
+                  
+       n   Percent
+ FALSE 180 100    
+ All   180 100    
+                  
+       n   Percent
+ FALSE 180 100    
+ All   180 100    
+                                      
+ DOULEURS PELVI-PERINEALES n   Percent
+ FALSE                     179  99.444
+ TRUE                        1   0.556
+ All                       180 100.000
+                              
+ ERECTION INCURVEE n   Percent
+ FALSE             179  99.444
+ TRUE                1   0.556
+ All               180 100.000
+                          
+ FIEVRE OU AEG n   Percent
+ FALSE         171  95    
+ TRUE            9   5    
+ All           180 100    
+                                       
+ DOULEURS LOMBO-ABDOMINALES n   Percent
+ FALSE                      175  97.22 
+ TRUE                         5   2.78 
+ All                        180 100.00 
+                  
+       n   Percent
+ FALSE 180 100    
+ All   180 100    
+                                   
+ DOULEURS TESTICULAIRES n   Percent
+ FALSE                  179  99.444
+ TRUE                     1   0.556
+ All                    180 100.000
+                  
+ IRO   n   Percent
+ FALSE 179  99.444
+ TRUE    1   0.556
+ All   180 100.000
+                           
+ MASSE LOMBAIRE n   Percent
+ FALSE          179  99.444
+ TRUE             1   0.556
+ All            180 100.000
+                  
+       n   Percent
+ FALSE 180 100    
+ All   180 100    
+                                 
+ TUMEFACTION SCROTALE n   Percent
+ FALSE                175  97.22 
+ TRUE                   5   2.78 
+ All                  180 100.00 
+                           
+ PLAIES DES OGE n   Percent
+ FALSE          179  99.444
+ TRUE             1   0.556
+ All            180 100.000
+                  
+       n   Percent
+ FALSE 180 100    
+ All   180 100    
+                    
+ DYSURIE n   Percent
+ FALSE   179  99.444
+ TRUE      1   0.556
+ All     180 100.000
+                                      
+ PLAIE PENETRANTE LOMBAIRE n   Percent
+ FALSE                     179  99.444
+ TRUE                        1   0.556
+ All                       180 100.000
+                                            
+ SUPPURATION POST-APPENDICULAIRE n   Percent
+ FALSE                           179  99.444
+ TRUE                              1   0.556
+ All                             180 100.000
+                                 
+ ERECTION DOULOUREUSE n   Percent
+ FALSE                179  99.444
+ TRUE                   1   0.556
+ All                  180 100.000
+                                          
+ AUTRES MOTIFS DE CONSULTATION n   Percent
+ FALSE                         176  97.78 
+ TRUE                            4   2.22 
+ All                           180 100.00 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6DQogIHBkZl9kb2N1bWVudDogZGVmYXVsdA0KICBodG1sX25vdGVib29rOiBkZWZhdWx0DQotLS0NCg0KVGhpcyBpcyBhbiBbUiBNYXJrZG93bl0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbSkgTm90ZWJvb2suIFdoZW4geW91IGV4ZWN1dGUgY29kZSB3aXRoaW4gdGhlIG5vdGVib29rLCB0aGUgcmVzdWx0cyBhcHBlYXIgYmVuZWF0aCB0aGUgY29kZS4gDQoNClRyeSBleGVjdXRpbmcgdGhpcyBjaHVuayBieSBjbGlja2luZyB0aGUgKlJ1biogYnV0dG9uIHdpdGhpbiB0aGUgY2h1bmsgb3IgYnkgcGxhY2luZyB5b3VyIGN1cnNvciBpbnNpZGUgaXQgYW5kIHByZXNzaW5nICpDdHJsK1NoaWZ0K0VudGVyKi4gDQoNCmBgYHtyfQ0KcGxvdChjYXJzKQ0KYGBgDQoNCkFkZCBhIG5ldyBjaHVuayBieSBjbGlja2luZyB0aGUgKkluc2VydCBDaHVuayogYnV0dG9uIG9uIHRoZSB0b29sYmFyIG9yIGJ5IHByZXNzaW5nICpDdHJsK0FsdCtJKi4NCg0KV2hlbiB5b3Ugc2F2ZSB0aGUgbm90ZWJvb2ssIGFuIEhUTUwgZmlsZSBjb250YWluaW5nIHRoZSBjb2RlIGFuZCBvdXRwdXQgd2lsbCBiZSBzYXZlZCBhbG9uZ3NpZGUgaXQgKGNsaWNrIHRoZSAqUHJldmlldyogYnV0dG9uIG9yIHByZXNzICpDdHJsK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuDQoNClRoZSBwcmV2aWV3IHNob3dzIHlvdSBhIHJlbmRlcmVkIEhUTUwgY29weSBvZiB0aGUgY29udGVudHMgb2YgdGhlIGVkaXRvci4gQ29uc2VxdWVudGx5LCB1bmxpa2UgKktuaXQqLCAqUHJldmlldyogZG9lcyBub3QgcnVuIGFueSBSIGNvZGUgY2h1bmtzLiBJbnN0ZWFkLCB0aGUgb3V0cHV0IG9mIHRoZSBjaHVuayB3aGVuIGl0IHdhcyBsYXN0IHJ1biBpbiB0aGUgZWRpdG9yIGlzIGRpc3BsYXllZC4NCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUkVTVUxUQVRTIgpvdXRwdXQ6CiAgcGRmX2RvY3VtZW50OiBkZWZhdWx0CiAgaHRtbF9kb2N1bWVudDoKICAgIGRmX3ByaW50OiBwYWdlZAogIGh0bWxfbm90ZWJvb2s6IGRlZmF1bHQKICB3b3JkX2RvY3VtZW50OiBkZWZhdWx0Ci0tLQoKYGBge3Igc2V0dXAsIGluY2x1ZGU9RkFMU0V9CmtuaXRyOjpvcHRzX2NodW5rJHNldChlY2hvID0gRkFMU0UpCmxpYnJhcnkocmVhZHhsKQpsaWJyYXJ5KHRhYmxlcykKZG9ubmVlcyA8LSByZWFkX2V4Y2VsKCIyMDIzLTA3LTAyX0RPTk5FRVMueGxzeCIpCm9wdGlvbnMoImRpZ2l0cyIgPSAyKQpuYl9kaWdpdHMgPC0gMwoKYGBgCgojIyBSZXBhcnRpdGlvbiBzZWxvbiBsZXMgY2xhc3NlcyBkJ8OiZ2VzCmBgYHtyfQpkb25uZWVzJElEX0FHRVtpcy5uYShkb25uZWVzJElEX0FHRSldIDwtICIoTm9uIHByw6ljaXPDqSkiCmRvbm5lZXMkSURfQUdFIDwtIGFzLmZhY3Rvcihkb25uZWVzJElEX0FHRSkKI3RhYnVsYXIoRmFjdG9yKGRvbm5lZXMkSURfQUdFLCAiQUdFIikrMX4obj0xKSArIFBlcmNlbnQoKSpGb3JtYXQoZGlnaXRzID0gbmJfZGlnaXRzKSwgZGF0YSA9IGRvbm5lZXMpCmBgYAoKIyMgUmVwYXJ0aXRpb24gc2Vsb24gbGUgc2V4ZQpgYGB7cn0KZG9ubmVlcyRJRF9TRVhFW2lzLm5hKGRvbm5lZXMkSURfU0VYRSldIDwtICIoTm9uIHByw6ljaXPDqSkiCmRvbm5lZXMkSURfU0VYRSA8LSBhcy5mYWN0b3IoZG9ubmVlcyRJRF9TRVhFKQp0YWJ1bGFyKEZhY3Rvcihkb25uZWVzJElEX1NFWEUsICJTRVhFIikrMX4obj0xKSArIFBlcmNlbnQoKSpGb3JtYXQoZGlnaXRzID0gbmJfZGlnaXRzKSwgZGF0YSA9IGRvbm5lZXMpCmBgYAoKIyMgUmVwYXJ0aXRpb24gc2Vsb24gbGEgcHJvZmVzc2lvbgpgYGB7cn0KZG9ubmVlcyRJRF9QUk9GRVNTSU9OW2lzLm5hKGRvbm5lZXMkSURfUFJPRkVTU0lPTildIDwtICIoTm9uIHByw6ljaXPDqSkiCmRvbm5lZXMkSURfUFJPRkVTU0lPTiA8LSBhcy5mYWN0b3IoZG9ubmVlcyRJRF9QUk9GRVNTSU9OKQp0YWJ1bGFyKEZhY3Rvcihkb25uZWVzJElEX1BST0ZFU1NJT04sICJQUk9GRVNTSU9OIikrMX4obj0xKSArIFBlcmNlbnQoKSpGb3JtYXQoZGlnaXRzID0gbmJfZGlnaXRzKSwgZGF0YT1kb25uZWVzKQoKYGBgCiMjIFJlcGFydGl0aW9uIHNlbG9uIGxlcyBtb3RpZnMgZGUgY29uc3VsdGF0aW9uCmBgYHtyfQojIyMgRXJlY3Rpb24gY29udGludWUKdGFidWxhcihGYWN0b3IoZG9ubmVlcyRNT1RJRl9FUkVDVElPTkNPTlRJTlVFLCAiRVJFQ1RJT04gQ09OVElOVUUiKSsxfihuPTEpICsgUGVyY2VudCgpKkZvcm1hdChkaWdpdHMgPSBuYl9kaWdpdHMpLCBkYXRhPWRvbm5lZXMpCnRhYnVsYXIoRmFjdG9yKGRvbm5lZXMkTU9USUZfSU1QT1NTSUJJTElURVRPVEFMRVVSSU5FUiwgIklNUE9TU0lCSUxJVMOJIFRPVEFMRSBEJ1VSSU5FUiIpKzF+KG49MSkgKyBQZXJjZW50KCkqRm9ybWF0KGRpZ2l0cyA9IG5iX2RpZ2l0cyksIGRhdGE9ZG9ubmVlcykKdGFidWxhcihGYWN0b3IoZG9ubmVlcyRNT1RJRl9VUklORVNST1VHRVNGT05DRUVTLCAiVVJJTkVTIFJPVUdFUyBPVSBGT05DRUVTIikrMX4obj0xKSArIFBlcmNlbnQoKSpGb3JtYXQoZGlnaXRzID0gbmJfZGlnaXRzKSwgZGF0YT1kb25uZWVzKQp0YWJ1bGFyKEZhY3Rvcihkb25uZWVzJE1PVElGX0FOVVJJRSwgIkFOVVJJRSIpKzF+KG49MSkgKyBQZXJjZW50KCkqRm9ybWF0KGRpZ2l0cyA9IG5iX2RpZ2l0cyksIGRhdGE9ZG9ubmVlcykKdGFidWxhcihGYWN0b3IoZG9ubmVlcyRNT1RJRl9ERVZJQVRJT05QRU5JUywgIkRFVklBVElPTiBEVSBQRU5JUyBWRVJTIExFIENPVEUgT1BQT1NFIikrMX4obj0xKSArIFBlcmNlbnQoKSpGb3JtYXQoZGlnaXRzID0gbmJfZGlnaXRzKSwgZGF0YT1kb25uZWVzKQp0YWJ1bGFyKEZhY3Rvcihkb25uZWVzJE1PVElGX1RVTUVGQUNUSU9OVkVSR0UsICJUVU1FRkFDVElPTiBERSBMQSBWRVJHRSIpKzF+KG49MSkgKyBQZXJjZW50KCkqRm9ybWF0KGRpZ2l0cyA9IG5iX2RpZ2l0cyksIGRhdGE9ZG9ubmVlcykKdGFidWxhcihGYWN0b3IoZG9ubmVlcyRNT1RJRl9VUklORVNNQUxPRE9SQU5URVMsICJVUklORVMgTUFMT0RPUkFOVEVTIikrMX4obj0xKSArIFBlcmNlbnQoKSpGb3JtYXQoZGlnaXRzID0gbmJfZGlnaXRzKSwgZGF0YT1kb25uZWVzKQp0YWJ1bGFyKEZhY3Rvcihkb25uZWVzJE1PVElGX0RPVUxFVVJTUEVMVklQRVJJTkVBTEVTLCAiRE9VTEVVUlMgUEVMVkktUEVSSU5FQUxFUyIpKzF+KG49MSkgKyBQZXJjZW50KCkqRm9ybWF0KGRpZ2l0cyA9IG5iX2RpZ2l0cyksIGRhdGE9ZG9ubmVlcykKdGFidWxhcihGYWN0b3IoZG9ubmVlcyRNT1RJRl9FUkVDVElPTklOQ1VSVkVFLCAiRVJFQ1RJT04gSU5DVVJWRUUiKSsxfihuPTEpICsgUGVyY2VudCgpKkZvcm1hdChkaWdpdHMgPSBuYl9kaWdpdHMpLCBkYXRhPWRvbm5lZXMpCnRhYnVsYXIoRmFjdG9yKGRvbm5lZXMkTU9USUZfRklFVlJFQUVHLCAiRklFVlJFIE9VIEFFRyIpKzF+KG49MSkgKyBQZXJjZW50KCkqRm9ybWF0KGRpZ2l0cyA9IG5iX2RpZ2l0cyksIGRhdGE9ZG9ubmVlcykKdGFidWxhcihGYWN0b3IoZG9ubmVlcyRNT1RJRl9ET1VMRVVSU0xPTUJPQUJET01JTkFMRVMsICJET1VMRVVSUyBMT01CTy1BQkRPTUlOQUxFUyIpKzF+KG49MSkgKyBQZXJjZW50KCkqRm9ybWF0KGRpZ2l0cyA9IG5iX2RpZ2l0cyksIGRhdGE9ZG9ubmVlcykKdGFidWxhcihGYWN0b3IoZG9ubmVlcyRNT1RJRl9ET1VMRVVSU0hZUE9HQVNUUklRVUVTLCAiRE9VTEVVUlMgSFlQT0dBU1RSSVFVRVMiKSsxfihuPTEpICsgUGVyY2VudCgpKkZvcm1hdChkaWdpdHMgPSBuYl9kaWdpdHMpLCBkYXRhPWRvbm5lZXMpCnRhYnVsYXIoRmFjdG9yKGRvbm5lZXMkTU9USUZfRE9VTEVVUlNURVNUSUNVTEFJUkVTLCAiRE9VTEVVUlMgVEVTVElDVUxBSVJFUyIpKzF+KG49MSkgKyBQZXJjZW50KCkqRm9ybWF0KGRpZ2l0cyA9IG5iX2RpZ2l0cyksIGRhdGE9ZG9ubmVlcykKdGFidWxhcihGYWN0b3IoZG9ubmVlcyRNT1RJRl9NT1RJRklSTywgIklSTyIpKzF+KG49MSkgKyBQZXJjZW50KCkqRm9ybWF0KGRpZ2l0cyA9IG5iX2RpZ2l0cyksIGRhdGE9ZG9ubmVlcykKdGFidWxhcihGYWN0b3IoZG9ubmVlcyRNT1RJRl9NQVNTRUxPTUJBSVJFLCAiTUFTU0UgTE9NQkFJUkUiKSsxfihuPTEpICsgUGVyY2VudCgpKkZvcm1hdChkaWdpdHMgPSBuYl9kaWdpdHMpLCBkYXRhPWRvbm5lZXMpCnRhYnVsYXIoRmFjdG9yKGRvbm5lZXMkTU9USUZfTUFTU0VIWVBPR0FTVFJJUVVFLCAiTUFTU0UgSFlQT0dBU1RSSVFVRSIpKzF+KG49MSkgKyBQZXJjZW50KCkqRm9ybWF0KGRpZ2l0cyA9IG5iX2RpZ2l0cyksIGRhdGE9ZG9ubmVlcykKdGFidWxhcihGYWN0b3IoZG9ubmVlcyRNT1RJRl9UVU1FRkFDVElPTlNDUk9UQUxFLCAiVFVNRUZBQ1RJT04gU0NST1RBTEUiKSsxfihuPTEpICsgUGVyY2VudCgpKkZvcm1hdChkaWdpdHMgPSBuYl9kaWdpdHMpLCBkYXRhPWRvbm5lZXMpCnRhYnVsYXIoRmFjdG9yKGRvbm5lZXMkTU9USUZfUExBSUVTT0dFLCAiUExBSUVTIERFUyBPR0UiKSsxfihuPTEpICsgUGVyY2VudCgpKkZvcm1hdChkaWdpdHMgPSBuYl9kaWdpdHMpLCBkYXRhPWRvbm5lZXMpCnRhYnVsYXIoRmFjdG9yKGRvbm5lZXMkTU9USUZfQUxURVJBVElPTkZDVFJFTkFMRSwgIkFMVEVSQVRJT04gREUgTEEgRk9OQ1RJT04gUkVOQUxFIikrMX4obj0xKSArIFBlcmNlbnQoKSpGb3JtYXQoZGlnaXRzID0gbmJfZGlnaXRzKSwgZGF0YT1kb25uZWVzKQp0YWJ1bGFyKEZhY3Rvcihkb25uZWVzJE1PVElGX0RZU1VSSUUsICJEWVNVUklFIikrMX4obj0xKSArIFBlcmNlbnQoKSpGb3JtYXQoZGlnaXRzID0gbmJfZGlnaXRzKSwgZGF0YT1kb25uZWVzKQp0YWJ1bGFyKEZhY3Rvcihkb25uZWVzJE1PVElGX1BMQUlFUEVORVRSQU5URUxPTUIsICJQTEFJRSBQRU5FVFJBTlRFIExPTUJBSVJFIikrMX4obj0xKSArIFBlcmNlbnQoKSpGb3JtYXQoZGlnaXRzID0gbmJfZGlnaXRzKSwgZGF0YT1kb25uZWVzKQp0YWJ1bGFyKEZhY3Rvcihkb25uZWVzJE1PVElGX1NVUFBVUkFUSU9OUE9TVEFQUEVORCwgIlNVUFBVUkFUSU9OIFBPU1QtQVBQRU5ESUNVTEFJUkUiKSsxfihuPTEpICsgUGVyY2VudCgpKkZvcm1hdChkaWdpdHMgPSBuYl9kaWdpdHMpLCBkYXRhPWRvbm5lZXMpCnRhYnVsYXIoRmFjdG9yKGRvbm5lZXMkTU9USUZfRVJFQ1RETCwgIkVSRUNUSU9OIERPVUxPVVJFVVNFIikrMX4obj0xKSArIFBlcmNlbnQoKSpGb3JtYXQoZGlnaXRzID0gbmJfZGlnaXRzKSwgZGF0YT1kb25uZWVzKQp0YWJ1bGFyKEZhY3Rvcihkb25uZWVzJE1PVElGX0FVVFJFU01PVElGU0NPTlMsICJBVVRSRVMgTU9USUZTIERFIENPTlNVTFRBVElPTiIpKzF+KG49MSkgKyBQZXJjZW50KCkqRm9ybWF0KGRpZ2l0cyA9IG5iX2RpZ2l0cyksIGRhdGE9ZG9ubmVlcykKCmBgYAoK</div>
 
 
 
