@@ -1,5 +1,6 @@
 ---
-title: "RESULTATS"
+title: "URGENCES UROLOGIQUES : ASPECTS ETIOLOGIQUES ET THERAPEUTIQUES CHU-T"
+author: "Dr OUATTARA Seydou"
 output:
   pdf_document: default
   html_document:
@@ -18,13 +19,26 @@ nb_digits <- 3
 
 ```
 
+# ANNEES
+
+## Repartition selon les années
+```{r}
+donnees$ANNEE[is.na(donnees$ANNEE)] <- "(Non précisé)"
+donnees$ANNEE <- as.factor(donnees$ANNEE)
+tabular(Factor(donnees$ANNEE, "ANNEES")+1~(n=1) + Percent()*Format(digits = nb_digits), data = donnees)
+```
+
+
+# Q2-AGE
 ## Repartition selon les classes d'âges
 ```{r}
 donnees$ID_AGE[is.na(donnees$ID_AGE)] <- "(Non précisé)"
 donnees$ID_AGE <- as.factor(donnees$ID_AGE)
-#tabular(Factor(donnees$ID_AGE, "AGE")+1~(n=1) + Percent()*Format(digits = nb_digits), data = donnees)
+levels(donnees$ID_AGE) <- c("(Non précisé)","21-40","41-60","61-80","81-100")
+tabular(Factor(donnees$ID_AGE, "AGE")+1~(n=1) + Percent()*Format(digits = nb_digits), data = donnees)
 ```
 
+# Q3-SEXE
 ## Repartition selon le sexe
 ```{r}
 donnees$ID_SEXE[is.na(donnees$ID_SEXE)] <- "(Non précisé)"
@@ -32,6 +46,7 @@ donnees$ID_SEXE <- as.factor(donnees$ID_SEXE)
 tabular(Factor(donnees$ID_SEXE, "SEXE")+1~(n=1) + Percent()*Format(digits = nb_digits), data = donnees)
 ```
 
+# Q4-PROFESSION
 ## Repartition selon la profession
 ```{r}
 donnees$ID_PROFESSION[is.na(donnees$ID_PROFESSION)] <- "(Non précisé)"
@@ -39,33 +54,1347 @@ donnees$ID_PROFESSION <- as.factor(donnees$ID_PROFESSION)
 tabular(Factor(donnees$ID_PROFESSION, "PROFESSION")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
 
 ```
-## Repartition selon les motifs de consultation
-```{r}
-### Erection continue
-tabular(Factor(donnees$MOTIF_ERECTIONCONTINUE, "ERECTION CONTINUE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_IMPOSSIBILITETOTALEURINER, "IMPOSSIBILITÉ TOTALE D'URINER")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_URINESROUGESFONCEES, "URINES ROUGES OU FONCEES")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_ANURIE, "ANURIE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_DEVIATIONPENIS, "DEVIATION DU PENIS VERS LE COTE OPPOSE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_TUMEFACTIONVERGE, "TUMEFACTION DE LA VERGE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_URINESMALODORANTES, "URINES MALODORANTES")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_DOULEURSPELVIPERINEALES, "DOULEURS PELVI-PERINEALES")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_ERECTIONINCURVEE, "ERECTION INCURVEE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_FIEVREAEG, "FIEVRE OU AEG")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_DOULEURSLOMBOABDOMINALES, "DOULEURS LOMBO-ABDOMINALES")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_DOULEURSHYPOGASTRIQUES, "DOULEURS HYPOGASTRIQUES")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_DOULEURSTESTICULAIRES, "DOULEURS TESTICULAIRES")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_MOTIFIRO, "IRO")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_MASSELOMBAIRE, "MASSE LOMBAIRE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_MASSEHYPOGASTRIQUE, "MASSE HYPOGASTRIQUE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_TUMEFACTIONSCROTALE, "TUMEFACTION SCROTALE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_PLAIESOGE, "PLAIES DES OGE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_ALTERATIONFCTRENALE, "ALTERATION DE LA FONCTION RENALE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_DYSURIE, "DYSURIE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_PLAIEPENETRANTELOMB, "PLAIE PENETRANTE LOMBAIRE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_SUPPURATIONPOSTAPPEND, "SUPPURATION POST-APPENDICULAIRE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_ERECTDL, "ERECTION DOULOUREUSE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
-tabular(Factor(donnees$MOTIF_AUTRESMOTIFSCONS, "AUTRES MOTIFS DE CONSULTATION")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
 
+# Q5-MOTIF DE CONSULTATION
+
+## Erection continue
+```{r}
+tabular(Factor(donnees$MOTIF_ERECTIONCONTINUE, "ERECTION CONTINUE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
 ```
+
+## Impossibilité totale d'uriner
+```{r}
+tabular(Factor(donnees$MOTIF_IMPOSSIBILITETOTALEURINER, "IMPOSSIBILITÉ TOTALE D'URINER")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Urines rouges ou foncées
+```{r}
+tabular(Factor(donnees$MOTIF_URINESROUGESFONCEES, "URINES ROUGES OU FONCEES")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+
+## Anurie
+```{r}
+tabular(Factor(donnees$MOTIF_ANURIE, "ANURIE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+
+## Déviation du pénis vers le côté opposé
+```{r}
+tabular(Factor(donnees$MOTIF_DEVIATIONPENIS, "DEVIATION DU PENIS VERS LE COTE OPPOSE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+
+## Tuméfaction de la verge
+```{r}
+tabular(Factor(donnees$MOTIF_TUMEFACTIONVERGE, "TUMEFACTION DE LA VERGE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Urines malodorantes
+```{r}
+tabular(Factor(donnees$MOTIF_URINESMALODORANTES, "URINES MALODORANTES")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Douleurs pelvi-périnéales
+```{r}
+tabular(Factor(donnees$MOTIF_DOULEURSPELVIPERINEALES, "DOULEURS PELVI-PERINEALES")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Erection incurvée
+```{r}
+tabular(Factor(donnees$MOTIF_ERECTIONINCURVEE, "ERECTION INCURVEE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Fièvre ou AEG
+```{r}
+tabular(Factor(donnees$MOTIF_FIEVREAEG, "FIEVRE OU AEG")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Douleurs lombo-abdominales
+```{r}
+tabular(Factor(donnees$MOTIF_DOULEURSLOMBOABDOMINALES, "DOULEURS LOMBO-ABDOMINALES")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Douleurs hypogastriques
+```{r}
+tabular(Factor(donnees$MOTIF_DOULEURSHYPOGASTRIQUES, "DOULEURS HYPOGASTRIQUES")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Douleurs testiculaires
+```{r}
+tabular(Factor(donnees$MOTIF_DOULEURSTESTICULAIRES, "DOULEURS TESTICULAIRES")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## IRO
+```{r}
+tabular(Factor(donnees$MOTIF_MOTIFIRO, "IRO")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Masse lombaire
+```{r}
+tabular(Factor(donnees$MOTIF_MASSELOMBAIRE, "MASSE LOMBAIRE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Masse hypogastrique
+```{r}
+tabular(Factor(donnees$MOTIF_MASSEHYPOGASTRIQUE, "MASSE HYPOGASTRIQUE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Tuméfaction scrotale
+```{r}
+tabular(Factor(donnees$MOTIF_TUMEFACTIONSCROTALE, "TUMEFACTION SCROTALE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Plaies des OGE
+```{r}
+tabular(Factor(donnees$MOTIF_PLAIESOGE, "PLAIES DES OGE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Altération de la fonction rénale
+```{r}
+tabular(Factor(donnees$MOTIF_ALTERATIONFCTRENALE, "ALTERATION DE LA FONCTION RENALE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Dysurie
+```{r}
+tabular(Factor(donnees$MOTIF_DYSURIE, "DYSURIE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Plaie pénétrante lombaire
+```{r}
+tabular(Factor(donnees$MOTIF_PLAIEPENETRANTELOMB, "PLAIE PENETRANTE LOMBAIRE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Suppuration post-appendiculaire
+```{r}
+tabular(Factor(donnees$MOTIF_SUPPURATIONPOSTAPPEND, "SUPPURATION POST-APPENDICULAIRE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Erection douloureuse
+```{r}
+tabular(Factor(donnees$MOTIF_ERECTDL, "ERECTION DOULOUREUSE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Autres motifs de consultation
+```{r}
+tabular(Factor(donnees$MOTIF_AUTRESMOTIFSCONS, "AUTRES MOTIFS DE CONSULTATION")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+# Q6-SIGNES CLINIQUES
+
+## Défense ou contracture abdominale
+```{r}
+tabular(Factor(donnees$CLIN_DEFENSECONTRABDOMINALE, "Défense ou contracture abdominale")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Signe de Geordano (+)
+```{r}
+tabular(Factor(donnees$CLIN_SIGNEGEORDANOPOSITIF, "Signe de Geordano (+)")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Globe vésical
+```{r}
+tabular(Factor(donnees$CLIN_GLOBEVESICAL, "Globe vésical")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Uretrorragie
+```{r}
+tabular(Factor(donnees$CLIN_URETRORRAGIE, "Uretrorragie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Instabilité hémodynamique
+```{r}
+tabular(Factor(donnees$CLIN_INSTABILITEHEMODYNAMIQUE, "Instabilité hémodynamique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Nécrose cutanée scrotale et périnéale
+```{r}
+tabular(Factor(donnees$CLIN_NECROSECUTSCROTPERIN, "Nécrose cutanée scrotale et périnéale")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Anurie
+```{r}
+tabular(Factor(donnees$CLIN_ANURIE, "Anurie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Hématurie macroscopique
+```{r}
+tabular(Factor(donnees$CLIN_HEMATURIEMACRO, "Hématurie macroscopique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Grosse bourse douloureuse
+```{r}
+tabular(Factor(donnees$CLIN_GROSSEBOURSEDL, "Grosse bourse douloureuse")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Signe de Preh (-)
+```{r}
+tabular(Factor(donnees$CLIN_SIGNEPREHNEG, "Signe de Preh (-)")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Reflexe crémastérien aboli
+```{r}
+tabular(Factor(donnees$CLIN_REFLEXCREMASTABOLI, "Reflexe crémastérien aboli")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Signe de Gouverneur (+)
+```{r}
+tabular(Factor(donnees$CLIN_SIGNEGOUVERNEURPOS, "Signe de Gouverneur (+)")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Defect de l'albuginée
+```{r}
+tabular(Factor(donnees$CLIN_DEFECTALBUGINEE, "Defect de l'albuginée")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Altération de l'état général
+```{r}
+tabular(Factor(donnees$CLIN_AEG, "Altération de l'état général")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Fièvre
+```{r}
+tabular(Factor(donnees$CLIN_FIEVRE, "Fièvre")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Erection douloureuse
+```{r}
+tabular(Factor(donnees$CLIN_ERECTDLPROL, "Erection douloureuse prolongée")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Déshydratation
+```{r}
+tabular(Factor(donnees$CLIN_DESHYDRATATION, "Déshydratation")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Tuméfaction scrotale
+```{r}
+tabular(Factor(donnees$CLIN_TUMEFSCROTALE, "Tuméfaction scrotale")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Hypertrophie prostatique
+```{r}
+tabular(Factor(donnees$CLIN_HP, "Hypertrophie prostatique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## EGM
+```{r}
+tabular(Factor(donnees$CLIN_EGM, "EGM")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## OMI
+```{r}
+tabular(Factor(donnees$CLIN_OMI, "OMI")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Hépatomégalie
+```{r}
+tabular(Factor(donnees$CLIN_HEPATOMEGAL, "Hépatomégalie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Ictère franc
+```{r}
+tabular(Factor(donnees$CLIN_ICTEREFRANC, "Ictère franc")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Paleur conjonctivale
+```{r}
+tabular(Factor(donnees$CLIN_PALEUR, "Paleur conjonctivale")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## TUBA
+```{r}
+tabular(Factor(donnees$CLIN_TUBA, "TUBA")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Anémie sevère
+```{r}
+tabular(Factor(donnees$CLIN_ANEMIESEV, "Anémie sevère")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Douleur de l'HCD
+```{r}
+tabular(Factor(donnees$CLIN_DLHCD, "Douleur de l'HCD")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Masse génitale
+```{r}
+tabular(Factor(donnees$CLIN_MASSEGEN, "Masse génitale")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Dénutrition
+```{r}
+tabular(Factor(donnees$CLIN_DENUTRI, "Dénutrition")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Masse hypogastrique
+```{r}
+tabular(Factor(donnees$CLIN_MASSHYPOG, "Masse hypogastrique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Masse pelvienne
+```{r}
+tabular(Factor(donnees$CLIN_MASSPELV, "Masse pelvienne")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Dysurie
+```{r}
+tabular(Factor(donnees$CLIN_DYSURIE, "Dysurie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Hypertrophie épididymaire
+```{r}
+tabular(Factor(donnees$CLIN_HYPEREPIDIDYM, "Hypertrophie epididymaire")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Paresthésies du MID
+```{r}
+tabular(Factor(donnees$CLIN_PARESMID, "Paresthésies du MID")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Syndrome tumoral lombaire
+```{r}
+tabular(Factor(donnees$CLIN_SDTUMLOMB, "Syndrome tumoral lombaire")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Plaie pénétrante lombaire
+```{r}
+tabular(Factor(donnees$CLIN_PLAIEPENELOMB, "Plaie pénétrante lombaire")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Masse lombaire
+```{r}
+tabular(Factor(donnees$CLIN_MASSELOMB, "Masse lombaire")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## SOBAV
+```{r}
+tabular(Factor(donnees$CLIN_SOBAV, "SOBAV")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Paraparésie
+```{r}
+tabular(Factor(donnees$CLIN_PARAPARESIE, "Paraparésie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Douleur lombaire
+```{r}
+tabular(Factor(donnees$CLIN_DLLOMBAIRE, "Douleur lombaire")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## SOHAU
+```{r}
+tabular(Factor(donnees$CLIN_SOHAU, "SOHAU")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Syndrome d'irritation péritoneale
+```{r}
+tabular(Factor(donnees$CLIN_SDIRRTPERIT, "Syndrome d'irritation péritoneal")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Syndrome infectieux
+```{r}
+tabular(Factor(donnees$CLIN_SDINFECT, "Syndrome infectieux")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+
+## Autres signes cliniques
+```{r}
+tabular(Factor(donnees$CLIN_AUTRESSIGNESCLIN, "Autres signes cliniques")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+# Q7-TYPES D'URGENCES UROLOGIQUES
+
+## RAU
+```{r}
+tabular(Factor(donnees$URG_RAU, "RAU")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Colique néphrétique
+```{r}
+tabular(Factor(donnees$URG_COLIQUENEPHRETIQUE, "Colique néphrétique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Hématurie
+```{r}
+tabular(Factor(donnees$URG_HEMATURIE, "Hématurie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Torsion du cordon spermatique
+```{r}
+tabular(Factor(donnees$URG_TORSIONCORDONSPERM, "Torsion du cordon spermatique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Priapisme
+```{r}
+tabular(Factor(donnees$URG_PRIAPISME, "Priapisme")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Gangrène de Fournier
+```{r}
+tabular(Factor(donnees$URG_GANGRENEFOURNIER, "Gangrène de Fournier")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Cystite aiguë
+```{r}
+tabular(Factor(donnees$URG_CYSTITEAIGUE, "Cystite aiguë")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Pyelonephrite aiguë
+```{r}
+tabular(Factor(donnees$URG_PYELONEPHRITEAIGUE, "Pyelonephrite aiguë")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Orchiépididymite aiguë
+```{r}
+tabular(Factor(donnees$URG_ORCHIEPIDIDYMITEAIGUE, "Orchiépididymite aiguë")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Fracture de verge
+```{r}
+tabular(Factor(donnees$URG_FRACTUREDEVERGE, "Fracture de verge")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Traumatisme rénal
+```{r}
+tabular(Factor(donnees$URG_TRAUMARENAL, "Traumatisme rénal")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Paraphymosis
+```{r}
+tabular(Factor(donnees$URG_PARAPHIMOSIS, "Paraphymosis")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Abcès scrotal
+```{r}
+tabular(Factor(donnees$URG_ABCESSCROTAL, "Abcès scrotal")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Uretrorragie
+```{r}
+tabular(Factor(donnees$URG_URETRORRAGIE, "Uretrorragie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## RCU
+```{r}
+tabular(Factor(donnees$URG_RCU, "RCU")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Anurie
+```{r}
+tabular(Factor(donnees$URG_ANURIE, "Anurie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Abcès rénal
+```{r}
+tabular(Factor(donnees$URG_ABCESRENAL, "Abcès rénal")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Prostatite
+```{r}
+tabular(Factor(donnees$URG_PROSTAIGUE, "Prostatite")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## IRO
+```{r}
+tabular(Factor(donnees$URG_IRO, "IRO")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Altération de la fonction rénale
+```{r}
+tabular(Factor(donnees$URG_ALTFCTRENALE, "Altération de la fonction rénale")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+# Q8-ANTECEDENTS MEDICAUX
+
+## Uretrite
+```{r}
+tabular(Factor(donnees$MED_URETRITE, "Uretrite")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Bilharziose
+```{r}
+tabular(Factor(donnees$MED_BILHARZIOSE, "Bilharziose")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## HTA
+```{r}
+tabular(Factor(donnees$MED_HTA, "HTA")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Asthme
+```{r}
+tabular(Factor(donnees$MED_ASTHME, "Asthme")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Diabète
+```{r}
+tabular(Factor(donnees$MED_DIABETE, "Diabète")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Adenocarcinome de la prostate
+```{r}
+tabular(Factor(donnees$MED_ADKPROSTATE, "Adenocarcinome de la prostate")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## AVC
+```{r}
+tabular(Factor(donnees$MED_AVC, "AVC")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Baignade en eau douce
+```{r}
+tabular(Factor(donnees$MED_BAIGNADEEAUDOUCE, "Baignade en eau douce")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Cancer du col de l'utérus
+```{r}
+tabular(Factor(donnees$MED_KCCOLUTERUS, "Cancer du col de l'utérus")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Cardiopathie
+```{r}
+tabular(Factor(donnees$MED_CARDIOPATHIE, "Cardiopathie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Cardiothyreose
+```{r}
+tabular(Factor(donnees$MED_CARDIOTHYREOSE, "Cardiothyreose")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Cystite
+```{r}
+tabular(Factor(donnees$MED_CYSTITE, "Cystite")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Drepanocytose
+```{r}
+tabular(Factor(donnees$MED_DREPANOCYTOSE, "Drepanocytose")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Dysfonction érectile
+```{r}
+tabular(Factor(donnees$MED_DYSFCTERECTILE, "Dysfonction érectile")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## HBP
+```{r}
+tabular(Factor(donnees$MED_HBP, "HBP")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Hematurie
+```{r}
+tabular(Factor(donnees$MED_HEMATURIE, "Hematurie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Hémopathie familiale
+```{r}
+tabular(Factor(donnees$MED_HEMOPATHIEFAML, "Hémopathie familiale")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Hépatopathie
+```{r}
+tabular(Factor(donnees$MED_HEPATOPATHIE, "Hépatopathie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Infection urinaire
+```{r}
+tabular(Factor(donnees$MED_INFECTIONURINAIRE, "Infection urinaire")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## IRO
+```{r}
+tabular(Factor(donnees$MED_IRO, "IRO")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## IST
+```{r}
+tabular(Factor(donnees$MED_IST, "IST")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Metrorragies
+```{r}
+tabular(Factor(donnees$MED_METRORRAGIE, "Metrorragies")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Cancer chez le père
+```{r}
+tabular(Factor(donnees$MED_CANCERPERE, "Cancer chez le père")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## OMI
+```{r}
+tabular(Factor(donnees$MED_OMI, "OMI")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Pneumopathie
+```{r}
+tabular(Factor(donnees$MED_PNEUMOPATHIE, "Pneumopathie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Pollakyurie
+```{r}
+tabular(Factor(donnees$MED_POLLAKYURIE, "Pollakyurie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Antécédent de RAU
+```{r}
+tabular(Factor(donnees$MED_ATCDRAU, "Antécédent de RAU")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Rupture de l'urètre
+```{r}
+tabular(Factor(donnees$MED_RUPTUREURETRE, "Rupture de l'urètre")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Substance erectogène
+```{r}
+tabular(Factor(donnees$MED_SUBSTANCEERECTOGENE, "Substance erectogène")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Troubles sensitivo-moteurs
+```{r}
+tabular(Factor(donnees$MED_TBSENSITIVOMOTEUR, "Troubles sensitivo-moteurs")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+##
+```{r}
+tabular(Factor(donnees$MED_TUBA, "TUBA")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Tuberculose
+```{r}
+tabular(Factor(donnees$MED_TUBERCULOSE, "Tuberculose")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## SRV (+)
+```{r}
+tabular(Factor(donnees$MED_SRVP, "SRV (+)")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Pathologie prostatique
+```{r}
+tabular(Factor(donnees$MED_PATHOPROST, "Pathologie prostatique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Tabac
+```{r}
+tabular(Factor(donnees$MED_TABAC, "Tabac")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+
+## Aucun antécédent médical
+```{r}
+tabular(Factor(donnees$MED_AUCUNATCDMED, "Aucun antécédent médical")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+# Q9-ANTECEDENTS CHIRURGICAUX
+
+## Césarienne
+```{r}
+tabular(Factor(donnees$CHR_CESARIENNE, "Césarienne")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Hernie
+```{r}
+tabular(Factor(donnees$CHR_HERNIE, "Hernie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Hydrocèle
+```{r}
+tabular(Factor(donnees$CHR_HYDROCELE, "Hydrocèle")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Appendicite
+```{r}
+tabular(Factor(donnees$CHR_APPENDICITE, "Appendicite")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Adenomectomie
+```{r}
+tabular(Factor(donnees$CHR_ADENOMECTOMIE, "Adenomectomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Amputation transfémorale
+```{r}
+tabular(Factor(donnees$CHR_AMPUTATIONTRANSFEMRO, "Amputation transfémorale")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Amygdalectomie
+```{r}
+tabular(Factor(donnees$CHR_AMYGDALECTOMIE, "Amygdalectomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## AVH
+```{r}
+tabular(Factor(donnees$CHR_AVH, "AVH")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Cure herniaire
+```{r}
+tabular(Factor(donnees$CHR_CUREHERNIAIRE, "Cure herniaire")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Cystostomie
+```{r}
+tabular(Factor(donnees$CHR_CYSTOSTOMIE, "Cystostomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Evidement prostatique
+```{r}
+tabular(Factor(donnees$CHR_EVIDEMENTPROSTATIQUE, "Evidement prostatique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Fracture tibia gauche
+```{r}
+tabular(Factor(donnees$CHR_FRACTTIBIAGCHE, "Fracture tibia gauche")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Hystérectomie
+```{r}
+tabular(Factor(donnees$CHR_HYSTERECTOMIE, "Hystérectomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## IUE
+```{r}
+tabular(Factor(donnees$CHR_IUE, "IUE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Kystectomie
+```{r}
+tabular(Factor(donnees$CHR_KYSTECTOMIE, "Kystectomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Laparotomie
+```{r}
+tabular(Factor(donnees$CHR_LAPAROTOMIE, "Laparotomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Nephro-uretrectomie
+```{r}
+tabular(Factor(donnees$CHR_NEPHROURETRECTOMIE, "Nephro-uretrectomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## NPC
+```{r}
+tabular(Factor(donnees$CHR_NPC, "NPC")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Pulpectomie
+```{r}
+tabular(Factor(donnees$CHR_PULPECTOMIE, "Pulpectomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## RTUP
+```{r}
+tabular(Factor(donnees$CHR_RTUP, "RTUP")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## RTUV
+```{r}
+tabular(Factor(donnees$CHR_RTUV, "RTUV")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Shunt cavernospongieux distal
+```{r}
+tabular(Factor(donnees$CHR_SHUNTCAVERNOSPONGDISTAL, "Shunt cavernospongieux distal")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Traumatisme medullaire
+```{r}
+tabular(Factor(donnees$CHR_TRAUMAMEDULLAIRE, "Traumatisme medullaire")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Traumatisme pelvien
+```{r}
+tabular(Factor(donnees$CHR_TRAUMAPELVIEN, "Traumatisme pelvien")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Uroplastie
+```{r}
+tabular(Factor(donnees$CHR_UROPLASTIE, "Uroplastie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Autres antécédents chirurgicaux
+```{r}
+tabular(Factor(donnees$CHR_AUTRESATCDCHIRU, "Autres antécédents chirurgicaux")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Aucun antécédent chirurgical
+```{r}
+tabular(Factor(donnees$CHR_AUCUNATCDCHIRG, "Aucun antécédent chirurgical")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+# Q12-EXAMENS COMPLEMENTAIRES
+
+## ASP
+```{r}
+tabular(Factor(donnees$EXM_ASP, "ASP")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Echographie
+```{r}
+tabular(Factor(donnees$EXM_ECHOGRAPHIE, "Echographie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## UIV
+```{r}
+tabular(Factor(donnees$EXM_UIV, "UIV")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## UCR
+```{r}
+tabular(Factor(donnees$EXM_UCR, "UCR")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Uro-TDM
+```{r}
+tabular(Factor(donnees$EXM_UROTDM, "Uro-TDM")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## ECBU
+```{r}
+tabular(Factor(donnees$EXM_ECBU, "ECBU")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## ALAT
+```{r}
+tabular(Factor(donnees$EXM_ALAT, "ALAT")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Antibiogramme
+```{r}
+tabular(Factor(donnees$EXM_ANTIBIOGRAMME, "Antibiogramme")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## ASAT
+```{r}
+tabular(Factor(donnees$EXM_ASAT, "ASAT")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Biopsie
+```{r}
+tabular(Factor(donnees$EXM_BIOPSIE, "Biopsie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## BPO
+```{r}
+tabular(Factor(donnees$EXM_BPO, "BPO")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Créatininemie
+```{r}
+tabular(Factor(donnees$EXM_CREAT, "Creatininemie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## CRP
+```{r}
+tabular(Factor(donnees$EXM_CRP, "CRP")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Cystoscopie
+```{r}
+tabular(Factor(donnees$EXM_CYSTOSCOPIE, "Cystoscopie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Cytologie urinaire
+```{r}
+tabular(Factor(donnees$EXM_CYTOURINAIRE, "Cytologie urinaire")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## GB
+```{r}
+tabular(Factor(donnees$EXM_GB, "GB")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## GE
+```{r}
+tabular(Factor(donnees$EXM_GE, "GE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Glycémie
+```{r}
+tabular(Factor(donnees$EXM_GLYCEMIE, "Glycémie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## GSRH
+```{r}
+tabular(Factor(donnees$EXM_GSRH, "GSRH")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Ionogramme
+```{r}
+tabular(Factor(donnees$EXM_IONOGRAMME, "Ionogramme")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## IRM
+```{r}
+tabular(Factor(donnees$EXM_IRM, "IRM")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## IRO
+```{r}
+tabular(Factor(donnees$EXM_IRO, "IRO")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## NFS
+```{r}
+tabular(Factor(donnees$EXM_NFS, "NFS")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Protidémie
+```{r}
+tabular(Factor(donnees$EXM_PROTIDEMIE, "Protidémie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## PSA
+```{r}
+tabular(Factor(donnees$EXM_PSA, "PSA")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## RTUV
+```{r}
+tabular(Factor(donnees$EXM_RTUV, "RTUV")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## SRV
+```{r}
+tabular(Factor(donnees$EXM_SRV, "SRV")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## TCA
+```{r}
+tabular(Factor(donnees$EXM_TCA, "TCA")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## TDM abdominal
+```{r}
+tabular(Factor(donnees$EXM_TDMABDO, "TDM abdominal")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## TDM thoraco-abdominal
+```{r}
+tabular(Factor(donnees$EXM_TDMTA, "TDM thoraco-abdominal")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## TP
+```{r}
+tabular(Factor(donnees$EXM_TP, "TP")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Urée
+```{r}
+tabular(Factor(donnees$EXM_UREE, "Urée")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+# Q13-ETIOLOGIES
+
+## Infections bactériennes
+```{r}
+tabular(Factor(donnees$ETIO_INFECTIONSBACTERIENNES, "Infections bactériennes")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Bilharziose urinaire
+```{r}
+tabular(Factor(donnees$ETIO_BILHARZIOSEURINAIRE, "Bilharziose urinaire")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Tumeur rénale
+```{r}
+tabular(Factor(donnees$ETIO_TUMEURRENALE, "Tumeur rénale")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Tumeur digestive basse
+```{r}
+tabular(Factor(donnees$ETIO_TUMEURDIGESTIVEBASSE, "Tumeur digestive basse")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Stenose ureterale
+```{r}
+tabular(Factor(donnees$ETIO_STENOSEURETERALE, "Stenose ureterale")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Cancer de la prostate
+```{r}
+tabular(Factor(donnees$ETIO_CANCERPROSTATE, "Cancer de la prostate")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Tumeur de la vessie
+```{r}
+tabular(Factor(donnees$ETIO_TUMEURVESSIE, "Tumeur de la vessie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Prostatite aiguë
+```{r}
+tabular(Factor(donnees$ETIO_PROSTATITEAIGUE, "Prostatite aiguë")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Adenome de la prostate
+```{r}
+tabular(Factor(donnees$ETIO_ADENOMEPROSTATE, "Adenome de la prostate")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Lithiases urinaires
+```{r}
+tabular(Factor(donnees$ETIO_LITHIASESURINAIRES, "Lithiases urinaires")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Contracture du col vésical
+```{r}
+tabular(Factor(donnees$ETIO_CONTRACTURECOLVESICAL, "Contracture du col vésical")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Neuropathie diabétique
+```{r}
+tabular(Factor(donnees$ETIO_NEUROPATHIEDIABETIQUE, "Neuropathie diabétique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Abcès de la prostate
+```{r}
+tabular(Factor(donnees$ETIO_ABCESPROSTATE, "Abcès de la prostate")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Sclérose de la loge post adenomectomie
+```{r}
+tabular(Factor(donnees$ETIO_SCLEROSELOGEPOSTADENO, "Sclérose de la loge post adenomectomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Stenose uretrale
+```{r}
+tabular(Factor(donnees$ETIO_STENOSEURETRALE, "Stenose uretrale")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Traumatisme
+```{r}
+tabular(Factor(donnees$ETIO_TRAUMATISME, "Traumatisme")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Abcès rénal
+```{r}
+tabular(Factor(donnees$ETIO_ABCESRENAL, "Abcès rénal")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Drépanocytose
+```{r}
+tabular(Factor(donnees$ETIO_DREPANOCYTOSE, "Drépanocytose")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Valve de l'uretre
+```{r}
+tabular(Factor(donnees$ETIO_VALVEURETRE, "Valve de l'uretre")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Abcès scrotal
+```{r}
+tabular(Factor(donnees$ETIO_ABCESSCROTAL, "Abcès scrotal")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Cancer du col de l'utérus métastatique
+```{r}
+tabular(Factor(donnees$ETIO_KCCOLUTERUSMETAST, "Cancer du col de l'utérus métastatique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Gangrène des OGE
+```{r}
+tabular(Factor(donnees$ETIO_GANGRENEOGE, "Gangrène des OGE")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Carcinome urothélial de haut grade
+```{r}
+tabular(Factor(donnees$ETIO_CARCINUROTHTGRADE, "Carcinome urothélial de haut grade")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## IRO
+```{r}
+tabular(Factor(donnees$ETIO_IRO, "IRO")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Dysmitose prostatique
+```{r}
+tabular(Factor(donnees$ETIO_DYSMITOSEPROST, "Dysmitose prostatique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Orchiépididymite
+```{r}
+tabular(Factor(donnees$ETIO_ORCHIEPIDYDIMITE, "Orchiépididymite")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Dysmitose vésical
+```{r}
+tabular(Factor(donnees$ETIO_DYSMITOSEVESICALE, "Dysmitose vésical")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Orchite
+```{r}
+tabular(Factor(donnees$ETIO_ORCHITE, "Orchite")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Envahissement de la vessie par tumeur
+```{r}
+tabular(Factor(donnees$ETIO_ENVAHISSEMENTVESSIETUMEUR, "Envahissement de la vessie par tumeur")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Priapisme à bas débit
+```{r}
+tabular(Factor(donnees$ETIO_PRIAPISMEBASDEBIT, "Priapisme à bas débit")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Erection d'origine néoplasique
+```{r}
+tabular(Factor(donnees$ETIO_ERECTIONORIGNEOPLS, "Erection d'origine néoplasique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Priapisme à haut débit
+```{r}
+tabular(Factor(donnees$ETIO_PRIAPISMEHAUTDEBIT, "Priapisme à haut débit")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Ligature bilatérale post hystérectomie sus totale
+```{r}
+tabular(Factor(donnees$ETIO_LIGATUREBILATPOSTHYST, "Ligature bilatérale post hystérectomie sus totale")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Neo du col localement avancé compliqué d'une RAV post engainement des méats ureteraux
+```{r}
+tabular(Factor(donnees$ETIO_NEOCOLLOCAVANCECOMPL, "Neo du col localement avancé compliqué d'une RAV post engainement des méats ureteraux")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Paludisme compliqué d'IRA
+```{r}
+tabular(Factor(donnees$ETIO_PALUCOMPLIRA, "Paludisme compliqué d'IRA")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## RAU
+```{r}
+tabular(Factor(donnees$ETIO_RAU, "RAU")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Sepsis sevère
+```{r}
+tabular(Factor(donnees$ETIO_SEPSISSEVERE, "Sepsis sevère")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Tumeur du col utérin envahissant la vessie
+```{r}
+tabular(Factor(donnees$ETIO_TUMEURCOLUTERINENVAHVESSIE, "Tumeur du col utérin envahissant la vessie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Autres étiologies
+```{r}
+tabular(Factor(donnees$ETIO_AUTRESETIOLOGIES, "Autres étiologies")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+# Q14-TRAITEMENT MEDICAL
+
+## Antibiothérapie
+```{r}
+tabular(Factor(donnees$TTM_ATB, "Antibiothérapie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Antalgique
+```{r}
+tabular(Factor(donnees$TTM_ANTALGIQUE, "Antalgique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Antiparasitaire
+```{r}
+tabular(Factor(donnees$TTM_ANTIPARASITAIRE, "Antiparasitaire")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Antiinflammatoire
+```{r}
+tabular(Factor(donnees$TTM_ANTIINFLAMMATOIRE, "Antiinflammatoire")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Sondage vésical
+```{r}
+tabular(Factor(donnees$TTM_SONDAGEVESICAL, "Sondage vésical")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Decaillotage vésical
+```{r}
+tabular(Factor(donnees$TTM_DECAILLOTAGEVESICAL, "Decaillotage vésical")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Antihypertenseur
+```{r}
+tabular(Factor(donnees$TTM_ANTIHYPERTENSEUR, "Antihypertenseur")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Antipaludique
+```{r}
+tabular(Factor(donnees$TTM_ANTIPALUDIQUE, "Antipaludique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Antispasmodique
+```{r}
+tabular(Factor(donnees$TTM_ANTISPASMODIQUE, "Antispasmodique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Anxiolytique
+```{r}
+tabular(Factor(donnees$TTM_ANXIOLYTIQUE, "Anxiolytique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Hemostatique
+```{r}
+tabular(Factor(donnees$TTM_HEMOSTATIQUE, "Hemostatique")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Irrigation lavage
+```{r}
+tabular(Factor(donnees$TTM_IRRIGATIONLAVAGE, "Irrigation lavage")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Lavage vésical
+```{r}
+tabular(Factor(donnees$TTM_LAVAGEVESICAL, "Lavage vésical")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Réhydratation
+```{r}
+tabular(Factor(donnees$TTM_REHYDRATATION, "Réhydratation")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Shunt caverno-spongieux
+```{r}
+tabular(Factor(donnees$TTM_SHUNTCAVERNSPONG, "Shunt caverno-spongieux")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Transfusion
+```{r}
+tabular(Factor(donnees$TTM_TRANSFUSION, "Transfusion")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+# Q15-TRAITEMENT CHIRURGICAL
+
+## Cystocathétérisme sus pubien
+```{r}
+tabular(Factor(donnees$TTC_CYSTOCATHESUSPUB, "Cystocathétérisme sus pubien")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Adenomectomie
+```{r}
+tabular(Factor(donnees$TTC_ADENOMECTOMIE, "Adenomectomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Tumorectomie
+```{r}
+tabular(Factor(donnees$TTC_TUMERECTOMIE, "Tumorectomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Nécrosectomie et/ou débridement
+```{r}
+tabular(Factor(donnees$TTC_NECROSECTOMIEDEBRIDEC, "Nécrosectomie et/ou débridement")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Nephrolithotomie
+```{r}
+tabular(Factor(donnees$TTC_NEPHROLITHOTOMIE, "Nephrolithotomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Ureterolithotomie
+```{r}
+tabular(Factor(donnees$TTC_URETEROLITHOTOMIE, "Ureterolithotomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Cystolithotomie
+```{r}
+tabular(Factor(donnees$TTC_CYSTOLITHOTOMIE, "Cystolithotomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Uretrolithotomie
+```{r}
+tabular(Factor(donnees$TTC_URETROLITHOTOMIE, "Uretrolithotomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Orchidectomie
+```{r}
+tabular(Factor(donnees$TTC_ORCHIDECTOMIE, "Orchidectomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Circoncision
+```{r}
+tabular(Factor(donnees$TTC_CIRCONCISION, "Circoncision")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Cervicotomie
+```{r}
+tabular(Factor(donnees$TTC_CERVICOTOMIE, "Cervicotomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Détorsion testiculaire + orchidopexie
+```{r}
+tabular(Factor(donnees$TTC_DETORSTESTICORCHIDOPEXIE, "Détorsion testiculaire + orchidopexie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Albuginorraphie
+```{r}
+tabular(Factor(donnees$TTC_ALBUGINORRAPHIE, "Albuginorraphie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Laparotomie réimplantation ureterale
+```{r}
+tabular(Factor(donnees$TTC_LAPAROTOMIEREIMPLURETERALE, "Laparotomie réimplantation ureterale")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Ligature des artères hypogastriques
+```{r}
+tabular(Factor(donnees$TTC_LIGATURESARTEHYPOG, "Ligatures des artères hypogastriques")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Nephrectomie
+```{r}
+tabular(Factor(donnees$TTC_NEPHRECTOMIE, "Nephrectomie")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## RTUP
+```{r}
+tabular(Factor(donnees$TTC_RTUP, "RTUP")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## RTUV
+```{r}
+tabular(Factor(donnees$TTC_RTUV, "RTUV")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Autres traitements chirurgicaux
+```{r}
+tabular(Factor(donnees$TTC_AUTRESTTTCHIRG, "Autres traitements chirurgicaux")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+# Q16-REFERE(E)
+
+## Référé(e)
+```{r}
+donnees$TTT_REFERENCE <- as.logical(donnees$TTT_REFERENCE)
+donnees$TTT_REFERENCE[is.na(donnees$TTT_REFERENCE)] <- "(Non précisé)"
+tabular(Factor(donnees$TTT_REFERENCE, "Référé(e)")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+# Q17-COMPLICATIONS PER OPERATOIRES
+
+## Complications per opératoires
+```{r}
+donnees$TTT_COMPLICPEROP[is.na(donnees$TTT_COMPLICPEROP)] <- "(Non précisé)"
+donnees$TTT_COMPLICPEROP <- as.factor(donnees$TTT_COMPLICPEROP)
+tabular(Factor(donnees$TTT_COMPLICPEROP, "Complications per opératoires")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+# Q18-COMPLICATIONS POST OPERATOIRES
+
+## Complications post opératoires
+```{r}
+donnees$TTT_COMPLICPOSTOP[is.na(donnees$TTT_COMPLICPOSTOP)] <- "(Non précisé)"
+donnees$TTT_COMPLICPOSTOP <- as.factor(donnees$TTT_COMPLICPOSTOP)
+tabular(Factor(donnees$TTT_COMPLICPOSTOP, "Complications post opératoires")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
+## Durée hospitalisation
+```{r}
+donnees$TTT_DUREEHOSPI[is.na(donnees$TTT_DUREEHOSPI)] <- "(Non précisé)"
+donnees$TTT_DUREEHOSPI <- as.factor(donnees$TTT_DUREEHOSPI)
+tabular(Factor(donnees$TTT_DUREEHOSPI, "Durée hospitalisation")+1~(n=1) + Percent()*Format(digits = nb_digits), data=donnees)
+```
+
 
